@@ -10,14 +10,20 @@ export default {
     return {
       
     }
-  }
+  },
+  methods:{
+     searchedResult (){
+      console.log('AppHeader ha ricevuto il messaggio')
+     },
+  },
 }
 </script>
 
 <template>
-  <p>Header</p>
-  <AppHeaderSearch/>
+  <AppHeaderSearch
+  @searched-movie="searchedResult"
+  />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
