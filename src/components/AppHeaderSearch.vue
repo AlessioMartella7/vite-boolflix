@@ -4,7 +4,12 @@ export default {
     return {
       inputSearch: '',
     }
-  }
+  },
+  methods:{
+    getSearchedInput(message){
+      console.log('ho cliccato sul bottone ed è apparso questo messaggio: ', message);
+    },
+  },
 }
 </script>
 
@@ -14,7 +19,7 @@ export default {
     <a class="navbar-brand">Bootflix</a>
     <div>
       <input class="form-control me-2" type="text" v-model="inputSearch">
-      <button class="btn btn-outline-success" type="button">Search</button>
+      <button @click="getSearchedInput(inputSearch)" class="btn btn-outline-success" type="button">Search</button>
     </div>  
   </div>
 </nav>
