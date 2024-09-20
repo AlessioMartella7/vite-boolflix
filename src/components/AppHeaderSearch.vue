@@ -7,7 +7,9 @@ export default {
   },
   methods:{
     getSearchedInput(message){
-      console.log('ho cliccato sul bottone ed è apparso questo messaggio: ', message);
+      console.log('ho cliccato sul bottone ed è apparso questo messaggio in App SearchBAR: ', message);
+      this.$emit('searchedMovie', message)
+
     },
   },
 }

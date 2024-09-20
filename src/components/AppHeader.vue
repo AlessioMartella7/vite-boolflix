@@ -12,8 +12,8 @@ export default {
     }
   },
   methods:{
-     searchedResult (){
-      console.log('AppHeader ha ricevuto il messaggio')
+     searchedResult (message){
+      console.log('AppHeader ha ricevuto il messaggio', message)
      },
   },
 }
