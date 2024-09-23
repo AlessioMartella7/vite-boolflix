@@ -11,7 +11,12 @@ export default {
   },
   methods:{
     getFlagImg(iso){
-      
+      const countryCode = store.languageToCountry[iso];
+      if (countryCode) {
+        return `https://flagcdn.com/24x18/${countryCode}.png`;
+      }
+      //in caso di mancata corrispondenza
+      return 'https://flagcdn.com/24x18/eu.png';
     }
   }
 }
@@ -23,7 +28,7 @@ export default {
 <li v-for="media in store.mediaMovieList" :key="media.id">
   <h2>{{ media.title }}</h2>
   <h3>{{ media.original_title }}</h3>
-  <p>{{ media.original_language }}</p>
+  <img :src="getFlagImg(media.original_language)" :alt="media.original_language">
   <p>{{ media.vote_average }}</p>
 </li>
 </ul>

@@ -4,7 +4,7 @@ export const store = reactive ({
     mediaMovieList: [],
     mediaSeriesList: [],
     languageToCountry: {
-        en: 'gb',
+        en: 'us',
         fr: 'fr',
         de: 'de',
         it: 'it',
