@@ -27,7 +27,11 @@ export default {
         .then((response) => {
           // mio creo una variabile per raccoglierre i risultati
           const result = response.data.results;
-
+          
+          // reset risultati di ricerca precedenti se presenti
+          store.mediaMovieList = [];
+          store.mediaSeriesList = [];
+          
           //itero per filtare la tipologia di media ricevuto e successivamente inviarlo allo store
           result.forEach(element => {
             if(element.media_type ==='movie'){
