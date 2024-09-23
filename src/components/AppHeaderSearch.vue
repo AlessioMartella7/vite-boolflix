@@ -9,7 +9,7 @@ export default {
     getSearchedInput(message){
       console.log('ho cliccato sul bottone ed è apparso questo messaggio in App SearchBAR: ', message);
       this.$emit('searchedMedia', message)
-
+      this.inputSearch=''
     },
   },
 }

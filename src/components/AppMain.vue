@@ -1,11 +1,11 @@
 <script>
-import AppMainMoviesField from './AppMainMoviesField.vue';
-
-
+import AppMainMoviesItem from './AppMainMoviesItem.vue';
+import AppMainSeriesItem from './AppMainSeriesItem.vue';
 
 export default {
     components:{
-        AppMainMoviesField,
+        AppMainMoviesItem,
+        AppMainSeriesItem
     },
     data() {
     return {
@@ -17,7 +17,8 @@ export default {
 
 <template>
     <p>Main</p>
-    <AppMainMoviesField/>
+    <AppMainMoviesItem/>
+    <AppMainSeriesItem/>
 </template>
 
 <style scoped>
