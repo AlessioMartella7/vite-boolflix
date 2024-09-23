@@ -12,13 +12,13 @@ export default {
 </script>
 
 <template>
-<p>MainMoviesField</p>
+
 <ul>
-<li v-for="movie in store.movieList" :key="movie.id">
-  <h2>{{ movie.title }}</h2>
-  <h3>{{ movie.original_title }}</h3>
-  <p>{{ movie.original_language }}</p>
-  <p>{{ movie.vote_average }}</p>
+<li v-for="media in store.mediaMovieList" :key="media.id">
+  <h2>{{ media.title }}</h2>
+  <h3>{{ media.original_title }}</h3>
+  <p>{{ media.original_language }}</p>
+  <p>{{ media.vote_average }}</p>
 </li>
 </ul>
 </template>

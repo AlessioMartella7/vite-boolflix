@@ -11,28 +11,39 @@ export default {
   data() {
     return {
       store,
-      apiSearchMovie:'https://api.themoviedb.org/3/search/movie',
+      apiSearchMedia:'https://api.themoviedb.org/3/search/multi',
       apiKey: '4377ddd6b96700ad11f5d9d8592df891',
       
     }
   },
   methods:{
-     getSearchedMovie(movieName){
-        axios.get(this.apiSearchMovie, {
+     getSearchedMedia(mediaName){
+        axios.get(this.apiSearchMedia, {
           params: {
             api_key: this.apiKey,
-            query: movieName,
+            query: mediaName,
           }
         })
         .then((response) => {
-          store.movieList = response.data.results;
-          console.log('RISULTATO CHIAMATA:', store.movieList)
+          // mio creo una variabile per raccoglierre i risultati
+          const result = response.data.results;
+
+          //itero per filtare la tipologia di media ricevuto e successivamente inviarlo allo store
+          result.forEach(element => {
+            if(element.media_type ==='movie'){
+              store.mediaMovieList.push(element)
+            } else if ( element.media_type === 'tv'){
+              store.mediaSeriesList.push(element);
+            }
+          });
+          console.log('RISULTATO CHIAMATA FILM:', store.mediaMovieList)
+          console.log('RISULTATO CHIAMATA SERIE TV:', store.mediaSeriesList)
         })
      } ,
 
-     searchedResult (searchedMovieName){
-      console.log('AppHeader ha ricevuto il messaggio', searchedMovieName)
-      this.getSearchedMovie(searchedMovieName)
+     searchedResult (searchedMediaName){
+      console.log('AppHeader ha ricevuto il messaggio', searchedMediaName)
+      this.getSearchedMedia(searchedMediaName)
      },
   },
 }
@@ -40,7 +51,7 @@ export default {
 
 <template>
   <AppHeaderSearch
-  @searched-movie="searchedResult"
+  @searched-media="searchedResult"
   />
 </template>
 
