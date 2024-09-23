@@ -8,6 +8,12 @@ export default {
       store,
     }
   },
+  props:{
+      seriesCoverImg: {
+        type : String,
+        required : true,
+      }
+  },
   methods:{
     getFlagImg(iso){
       const countryCode = store.languageToCountry[iso];
@@ -24,22 +30,22 @@ export default {
 <template>
 
 <ul>
-<li v-for="series in store.mediaSeriesList" :key="series.id">
-  <!-- titolo serie tv -->
-  <h2>{{ series.name }}</h2>
+  <li v-for="series in store.mediaSeriesList" :key="series.id">
+    <!-- titolo serie tv -->
+    <h2>{{ series.name }}</h2>
 
-  <!-- titolo originale serie tv -->
-  <h3>{{ series.original_name }}</h3>
+    <!-- titolo originale serie tv -->
+    <h3>{{ series.original_name }}</h3>
 
-  <!-- lingua originale -->
-  <img :src="getFlagImg(series.original_language)" :alt="series.original_language">
+    <!-- lingua originale -->
+    <img :src="getFlagImg(series.original_language)" :alt="series.original_language">
 
-  <!-- voto medio -->
-  <p>{{ series.vote_average }}</p>
+    <!-- voto medio -->
+    <p>{{ series.vote_average }}</p>
 
   <!-- immagine di copertina -->
-   
-</li>
+  <img :src="`${seriesCoverImg}${series.poster_path}`" :alt="`${series.name} cover`">
+  </li>
 </ul>
 </template>
 

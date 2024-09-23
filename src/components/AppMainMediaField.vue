@@ -1,7 +1,7 @@
 <script>
 import AppMainMoviesItem from './AppMainMoviesItem.vue';
 import AppMainSeriesItem from './AppMainSeriesItem.vue';
-import axios from 'axios';
+import { store } from '../store';
 
 export default {
     components:{
@@ -10,23 +10,43 @@ export default {
     },
 
     data() {
+        
     return {
-      
+        store,
+        baseImgUrl: 'https://image.tmdb.org/t/p/',
+        imgSize:'w300',
+        imgCover: ``,
+        
     }
   },
+  methods:{
+    printconsole(){
+        console.log('img cover url creata:',this.imgCover)
+    },
 
-    methods:{
-        getMediaImage (){
-            
-        }
+    createImgCoverUrl () {
+        
+        this.imgCover = `${this.baseImgUrl}${this.imgSize}`;
+        return 
+    }
+    
   },
+  created(){
+    this.printconsole();
+    this.createImgCoverUrl();
+  }
 }
 </script>
 
 <template>
 
-    <AppMainMoviesItem/>
-    <AppMainSeriesItem/>
+    <AppMainMoviesItem
+    :movieCoverImg ="imgCover"
+    />
+    
+    <AppMainSeriesItem
+    :seriesCoverImg ="imgCover"
+    />
 </template>
 
 <style scoped>
