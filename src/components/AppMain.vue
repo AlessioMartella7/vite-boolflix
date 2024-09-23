@@ -1,11 +1,10 @@
 <script>
-import AppMainMoviesItem from './AppMainMoviesItem.vue';
-import AppMainSeriesItem from './AppMainSeriesItem.vue';
+import AppMainMediaField from './AppMainMediaField.vue';
+
 
 export default {
     components:{
-        AppMainMoviesItem,
-        AppMainSeriesItem
+        AppMainMediaField,
     },
     data() {
     return {
@@ -17,8 +16,8 @@ export default {
 
 <template>
     <p>Main</p>
-    <AppMainMoviesItem/>
-    <AppMainSeriesItem/>
+    <AppMainMediaField/>
+
 </template>
 
 <style scoped>

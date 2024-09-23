@@ -24,11 +24,21 @@ export default {
 <template>
 
 <ul>
-<li v-for="media in store.mediaSeriesList" :key="media.id">
-  <h2>{{ media.name }}</h2>
-  <h3>{{ media.original_name }}</h3>
-  <img :src="getFlagImg(media.original_language)" :alt="media.original_language">
-  <p>{{ media.vote_average }}</p>
+<li v-for="series in store.mediaSeriesList" :key="series.id">
+  <!-- titolo serie tv -->
+  <h2>{{ series.name }}</h2>
+
+  <!-- titolo originale serie tv -->
+  <h3>{{ series.original_name }}</h3>
+
+  <!-- lingua originale -->
+  <img :src="getFlagImg(series.original_language)" :alt="series.original_language">
+
+  <!-- voto medio -->
+  <p>{{ series.vote_average }}</p>
+
+  <!-- immagine di copertina -->
+   
 </li>
 </ul>
 </template>
