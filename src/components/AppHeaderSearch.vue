@@ -16,12 +16,12 @@ export default {
 </script>
 
 <template>
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-black">
   <div class="container-fluid">
-    <a class="navbar-brand">Bootflix</a>
+    <a class="navbar-brand fw-bold fs-4 text-danger p-2">BOOTFLIX</a>
     <div>
-      <input class="form-control me-2" type="text" v-model="inputSearch "@keyup.enter="getSearchedInput(inputSearch)">
-      <button @click="getSearchedInput(inputSearch)" class="btn btn-outline-success" type="button">Search</button>
+      <input class="rounded-0 me-2" type="text" v-model="inputSearch "@keyup.enter="getSearchedInput(inputSearch)">
+      <button @click="getSearchedInput(inputSearch)" class="btn btn-outline-success d-none " type="button">Search</button>
     </div>  
   </div>
 </nav>

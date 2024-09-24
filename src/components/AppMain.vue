@@ -15,11 +15,13 @@ export default {
 </script>
 
 <template>
-    <p>Main</p>
+    <main>
     <AppMainMediaField/>
-    
+    </main>
 </template>
 
 <style lang="scss" scoped>
-
+main {
+    background-color: #434343;
+}
 </style>

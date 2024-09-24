@@ -54,10 +54,24 @@ export default {
 </script>
 
 <template>
-  <AppHeaderSearch
-  @searched-media="searchedResult"
-  />
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <AppHeaderSearch
+           @searched-media="searchedResult"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>
+
+header {
+  border: 1px dashed red;
+  background-color: black;
+}
+
 </style>

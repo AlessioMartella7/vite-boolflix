@@ -14,7 +14,7 @@ export default {
     return {
         store,
         baseImgUrl: 'https://image.tmdb.org/t/p/',
-        imgSize:'w300',
+        imgSize:'w342',
         imgCover: ``,
         
     }
@@ -34,15 +34,18 @@ export default {
 </script>
 
 <template>
-
-    <AppMainMoviesItem
-    :movieCoverImg ="imgCover"
-    />
-    
-    <AppMainSeriesItem
-    :seriesCoverImg ="imgCover"
-    />
+  <div class="container-fluid">
+        <ul>
+          <AppMainMoviesItem
+          :movieCoverImg ="imgCover"
+          />
+          
+          <AppMainSeriesItem
+          :seriesCoverImg ="imgCover"
+          />
+      </ul>
+  </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>

@@ -31,26 +31,33 @@ export default {
 </script>
 
 <template>
+  <div class="row justify-content-center align-items-center">
+    <li class="col-3 d-flex" v-for="series in store.mediaSeriesList" :key="series.id">
+      <div class="card h-100">
+      <!-- titolo serie tv -->
+      <h2>{{ series.name }}</h2>
 
-<ul>
-  <li v-for="series in store.mediaSeriesList" :key="series.id">
-    <!-- titolo serie tv -->
-    <h2>{{ series.name }}</h2>
+      <!-- titolo originale serie tv -->
+      <h3>{{ series.original_name }}</h3>
 
-    <!-- titolo originale serie tv -->
-    <h3>{{ series.original_name }}</h3>
+      <!-- lingua originale -->
+      <img class="lang-flag" :src="getFlagImg(series.original_language)" :alt="series.original_language">
 
-    <!-- lingua originale -->
-    <img :src="getFlagImg(series.original_language)" :alt="series.original_language">
-
-    <!-- voto medio stelle -->
-    <font-awesome-icon v-for="star in transformToInt(series.vote_average)" icon="star" class="star text-warning"/>
-
-    <!-- immagine di copertina -->
-    <img :src="`${seriesCoverImg}${series.poster_path}`" :alt="`${series.name} cover`">
-  </li>
-</ul>
+      <!-- voto medio stelle -->
+       <div class="d-flex">
+         <font-awesome-icon v-for="star in transformToInt(series.vote_average)" icon="star" class="star text-warning"/>
+       </div>
+      <!-- immagine di copertina -->
+      <img class="img-fluid" :src="`${seriesCoverImg}${series.poster_path}`" :alt="`${series.name} cover`">
+    </div>
+    </li>
+  </div>  
 </template>
 
 <style lang="scss" scoped>
+.lang-flag {
+  height: 20px;
+  width: 30px;
+}
+
 </style>
