@@ -18,9 +18,9 @@ export default {
 <template>
 <nav class="navbar bg-black">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold fs-4 text-danger p-2">BOOTFLIX</a>
+    <a class="navbar-brand fw-bold fs-4 text-danger p-2" href="#">BOOTFLIX</a>
     <div>
-      <input class="rounded-0 me-2" type="text" v-model="inputSearch "@keyup.enter="getSearchedInput(inputSearch)">
+      <input class="rounded-0 me-2" type="text" v-model="inputSearch "@keyup.enter="getSearchedInput(inputSearch)" placeholder="Search">
       <button @click="getSearchedInput(inputSearch)" class="btn btn-outline-success d-none " type="button">Search</button>
     </div>  
   </div>

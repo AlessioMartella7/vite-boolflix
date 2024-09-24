@@ -70,7 +70,7 @@ export default {
 <style lang="scss" scoped>
 
 header {
-  border: 1px dashed red;
+
   background-color: black;
 }
 
