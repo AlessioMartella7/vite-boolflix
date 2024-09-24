@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       store,
-
+      
     }
   },
   props:{
@@ -24,6 +24,9 @@ export default {
       //in caso di mancata corrispondenza
       return 'https://flagcdn.com/24x18/eu.png';
     },
+    transformToInt(vote){
+        return Math.round(vote / 2);
+    }
   },
  
 }
@@ -43,8 +46,8 @@ export default {
     <!-- lingua originale  -->
     <img :src="getFlagImg(movie.original_language)" :alt="movie.original_language">
 
-    <!-- voto medio -->
-    <p>{{ movie.vote_average }}</p>
+    <!-- voto medio stelle -->
+    <font-awesome-icon v-for="star in transformToInt(movie.vote_average)" icon="star" class="star text-warning"/>
 
     <!-- immagine di copertina -->
     <img :src="`${movieCoverImg}${movie.poster_path}`" :alt="`${movie.title} cover`">
