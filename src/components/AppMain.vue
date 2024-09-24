@@ -17,8 +17,9 @@ export default {
 <template>
     <p>Main</p>
     <AppMainMediaField/>
-
+    
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 </style>
