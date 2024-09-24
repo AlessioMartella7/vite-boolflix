@@ -20,7 +20,7 @@ export default {
   <div class="container-fluid">
     <a class="navbar-brand">Bootflix</a>
     <div>
-      <input class="form-control me-2" type="text" v-model="inputSearch">
+      <input class="form-control me-2" type="text" v-model="inputSearch "@keyup.enter="getSearchedInput(inputSearch)">
       <button @click="getSearchedInput(inputSearch)" class="btn btn-outline-success" type="button">Search</button>
     </div>  
   </div>

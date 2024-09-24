@@ -20,19 +20,14 @@ export default {
     }
   },
   methods:{
-    printconsole(){
-        console.log('img cover url creata:',this.imgCover)
-    },
 
     createImgCoverUrl () {
-        
         this.imgCover = `${this.baseImgUrl}${this.imgSize}`;
         return 
     }
-    
   },
+  
   created(){
-    this.printconsole();
     this.createImgCoverUrl();
   }
 }

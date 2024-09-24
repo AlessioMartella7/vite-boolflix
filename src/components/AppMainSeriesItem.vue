@@ -22,6 +22,9 @@ export default {
       }
       //in caso di mancata corrispondenza
       return 'https://flagcdn.com/24x18/eu.png';
+    },
+    transformToInt(vote){
+        return Math.round(vote / 2);
     }
   }
 }
@@ -40,11 +43,11 @@ export default {
     <!-- lingua originale -->
     <img :src="getFlagImg(series.original_language)" :alt="series.original_language">
 
-    <!-- voto medio -->
-    <p>{{ series.vote_average }}</p>
+    <!-- voto medio stelle -->
+    <font-awesome-icon v-for="star in transformToInt(series.vote_average)" icon="star" class="star text-warning"/>
 
-  <!-- immagine di copertina -->
-  <img :src="`${seriesCoverImg}${series.poster_path}`" :alt="`${series.name} cover`">
+    <!-- immagine di copertina -->
+    <img :src="`${seriesCoverImg}${series.poster_path}`" :alt="`${series.name} cover`">
   </li>
 </ul>
 </template>
