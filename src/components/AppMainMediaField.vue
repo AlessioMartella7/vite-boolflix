@@ -34,8 +34,9 @@ export default {
 </script>
 
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid pt-5">
         <ul>
+          <div class="row justify-content-center gap-2">
           <AppMainMoviesItem
           :movieCoverImg ="imgCover"
           />
@@ -43,6 +44,7 @@ export default {
           <AppMainSeriesItem
           :seriesCoverImg ="imgCover"
           />
+        </div>  
       </ul>
   </div>
 </template>
