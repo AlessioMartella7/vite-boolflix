@@ -34,8 +34,8 @@ export default {
   
     <li class="col-3 d-flex" v-for="series in store.mediaSeriesList" :key="series.id">
       <div class="card h-100 rounded-0">
-        <div class="card-body d-flex flex-column p-0">
-          <div class="card-info justify-content-center align-items-center flex-column">
+        <div class="card-body bg-black d-flex flex-column p-0">
+          <div class="card-info position-absolute top-0 start-0 end-0 bottom-0 justify-content-center align-items-center flex-column">
               <!-- titolo serie tv -->
               <h2>{{ series.name }}</h2>
 
@@ -63,6 +63,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.card-body {
+  overflow: hidden;
+  position: relative;
+}
 .lang-flag {
   height: 20px;
   width: 30px;
